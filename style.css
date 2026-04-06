@@ -531,6 +531,71 @@ a {
   }
 }
 
+.img-banner {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.img-banner img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.img-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 77, 110, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-banner-overlay p {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid rgba(165, 243, 252, 0.4);
+  aspect-ratio: 4 / 5;
+}
+
+.img-banner-lg img {
+  height: 280px;
+}
+
+.team-banner img,
+.contact-banner img {
+  height: 200px;
+}
+
+.page-hero-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.page-hero-split .page-hero-content {
+  text-align: left;
+}
+
+.page-hero-split .trust-badges {
+  justify-content: flex-start;
+}
+
 .page-hero {
   background: #0A4D6E;
   color: var(--white);
@@ -1256,6 +1321,11 @@ a {
   align-items: start;
 }
 
+.contact-banner {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
 .contact-intro {
   margin: -0.8rem 0 1.25rem;
   color: var(--muted);
@@ -1438,6 +1508,23 @@ a {
 }
 
 @media (max-width: 980px) {
+  .page-hero-split {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .page-hero-split .page-hero-content {
+    text-align: center;
+  }
+
+  .page-hero-split .trust-badges {
+    justify-content: center;
+  }
+
+  .page-hero-split .hero-image {
+    margin: 0 auto;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
