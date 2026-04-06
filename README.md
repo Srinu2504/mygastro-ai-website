@@ -32,5 +32,5 @@ https://srinu2504.github.io/mygastro-ai-website/
 - Git & GitHub
 
 ## Developer
-Sri — QA Tester & Aspiring Data Scientist
+Srinivasa — QA Tester & Aspiring Data Scientist
 Lovely Professional University
