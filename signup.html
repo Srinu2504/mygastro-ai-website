@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | MyGastro AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="MyGastro AI home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Digestive icon">
+            <path
+              d="M38 8c-3 0-6 2-8 5-2 3-3 7-3 11v6c0 2-1 4-3 6l-4 4c-4 4-6 9-6 15 0 6 5 11 11 11 6 0 11-5 11-11v-6c0-3 1-6 4-9l2-2c5-5 8-12 8-19 0-6-5-11-12-11Z"
+              fill="currentColor"
+            ></path>
+            <circle cx="35" cy="44" r="3" fill="#C8EDE0"></circle>
+          </svg>
+        </span>
+        <span class="logo-text">MyGastro AI</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="for-patients.html">For Patients</a></li>
+        <li><a href="for-clinics.html">For Clinics</a></li>
+        <li><a href="app.html">App</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="signin.html" class="nav-auth-link">Sign In</a>
+      <a href="signup.html" class="btn btn-primary btn-gradient nav-cta">Get Started</a>
+    </nav>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <span class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <path
+              d="M38 8c-3 0-6 2-8 5-2 3-3 7-3 11v6c0 2-1 4-3 6l-4 4c-4 4-6 9-6 15 0 6 5 11 11 11 6 0 11-5 11-11v-6c0-3 1-6 4-9l2-2c5-5 8-12 8-19 0-6-5-11-12-11Z"
+              fill="currentColor"
+            ></path>
+            <circle cx="35" cy="44" r="3" fill="#C8EDE0"></circle>
+          </svg>
+        </span>
+        <span class="logo-text">MyGastro AI</span>
+      </div>
+
+      <h1 class="auth-heading">Create Your Account</h1>
+      <p class="auth-sub">Join MyGastro AI today</p>
+
+      <div class="role-tabs" role="tablist" aria-label="Account type">
+        <button type="button" class="role-tab active" data-panel="patient" role="tab" aria-selected="true">Patient</button>
+        <button type="button" class="role-tab" data-panel="doctor" role="tab" aria-selected="false">Doctor</button>
+        <button type="button" class="role-tab" data-panel="clinic" role="tab" aria-selected="false">Clinic Admin</button>
+      </div>
+
+      <div id="signup-global-success" class="success-msg" hidden role="status"></div>
+
+      <form id="form-patient" class="signup-panel" data-panel="patient" novalidate>
+        <div class="auth-field">
+          <label for="pt-name">Full Name</label>
+          <input type="text" id="pt-name" name="full_name" required autocomplete="name">
+          <span class="field-error" data-for="pt-name" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="pt-mobile">Mobile Number</label>
+          <input type="tel" id="pt-mobile" name="mobile" maxlength="10" inputmode="numeric" required autocomplete="tel">
+          <span class="field-error" data-for="pt-mobile" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="pt-dob">Date of Birth</label>
+          <input type="date" id="pt-dob" name="dob" required>
+          <span class="field-error" data-for="pt-dob" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="pt-gender">Gender</label>
+          <select id="pt-gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="field-error" data-for="pt-gender" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="pt-email">Email Address</label>
+          <input type="email" id="pt-email" name="email" required autocomplete="email">
+          <span class="field-error" data-for="pt-email" hidden></span>
+        </div>
+        <button type="submit" class="auth-btn auth-btn-primary">Create Account</button>
+      </form>
+
+      <form id="form-doctor" class="signup-panel" data-panel="doctor" novalidate hidden>
+        <div class="auth-field">
+          <label for="dr-name">Full Name</label>
+          <input type="text" id="dr-name" name="full_name" required autocomplete="name">
+          <span class="field-error" data-for="dr-name" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="dr-mobile">Mobile Number</label>
+          <input type="tel" id="dr-mobile" name="mobile" maxlength="10" inputmode="numeric" required autocomplete="tel">
+          <span class="field-error" data-for="dr-mobile" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="dr-spec">Specialization</label>
+          <input type="text" id="dr-spec" name="specialization" required>
+          <span class="field-error" data-for="dr-spec" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="dr-license">Medical License Number</label>
+          <input type="text" id="dr-license" name="license" required>
+          <span class="field-error" data-for="dr-license" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="dr-clinic">Clinic Name</label>
+          <input type="text" id="dr-clinic" name="clinic_name" required>
+          <span class="field-error" data-for="dr-clinic" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="dr-email">Email Address</label>
+          <input type="email" id="dr-email" name="email" required autocomplete="email">
+          <span class="field-error" data-for="dr-email" hidden></span>
+        </div>
+        <button type="submit" class="auth-btn auth-btn-primary">Create Account</button>
+      </form>
+
+      <form id="form-clinic" class="signup-panel" data-panel="clinic" novalidate hidden>
+        <div class="auth-field">
+          <label for="ca-clinic">Clinic Name</label>
+          <input type="text" id="ca-clinic" name="clinic_name" required>
+          <span class="field-error" data-for="ca-clinic" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="ca-admin">Admin Full Name</label>
+          <input type="text" id="ca-admin" name="admin_name" required autocomplete="name">
+          <span class="field-error" data-for="ca-admin" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="ca-mobile">Mobile Number</label>
+          <input type="tel" id="ca-mobile" name="mobile" maxlength="10" inputmode="numeric" required autocomplete="tel">
+          <span class="field-error" data-for="ca-mobile" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="ca-email">Email Address</label>
+          <input type="email" id="ca-email" name="email" required autocomplete="email">
+          <span class="field-error" data-for="ca-email" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="ca-gst">GST Number</label>
+          <input type="text" id="ca-gst" name="gst" required>
+          <span class="field-error" data-for="ca-gst" hidden></span>
+        </div>
+        <div class="auth-field">
+          <label for="ca-city">City</label>
+          <input type="text" id="ca-city" name="city" required>
+          <span class="field-error" data-for="ca-city" hidden></span>
+        </div>
+        <button type="submit" class="auth-btn auth-btn-primary">Create Account</button>
+      </form>
+
+      <p class="auth-link">Already have an account? <a href="signin.html">Sign In</a></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo footer-logo" aria-label="MyGastro AI home">
+          <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img" aria-label="Digestive icon">
+              <path
+                d="M38 8c-3 0-6 2-8 5-2 3-3 7-3 11v6c0 2-1 4-3 6l-4 4c-4 4-6 9-6 15 0 6 5 11 11 11 6 0 11-5 11-11v-6c0-3 1-6 4-9l2-2c5-5 8-12 8-19 0-6-5-11-12-11Z"
+                fill="currentColor"
+              ></path>
+              <circle cx="35" cy="44" r="3" fill="#C8EDE0"></circle>
+            </svg>
+          </span>
+          <span class="logo-text">MyGastro AI</span>
+        </a>
+        <p>AI-powered healthcare technology for better gastroenterology outcomes.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="for-patients.html">For Patients</a>
+        <a href="for-clinics.html">For Clinics</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 MyGastro AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const panels = document.querySelectorAll(".signup-panel");
+      const tabs = document.querySelectorAll(".role-tab");
+      const successBox = document.getElementById("signup-global-success");
+
+      function showPanel(name) {
+        panels.forEach((p) => {
+          const match = p.dataset.panel === name;
+          p.hidden = !match;
+        });
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const panel = tab.dataset.panel;
+          tabs.forEach((t) => {
+            t.classList.toggle("active", t === tab);
+            t.setAttribute("aria-selected", String(t === tab));
+          });
+          showPanel(panel);
+        });
+      });
+
+      function clearErrors(form) {
+        form.querySelectorAll(".field-error").forEach((el) => {
+          el.hidden = true;
+          el.textContent = "";
+        });
+        form.querySelectorAll(".input-error").forEach((el) => el.classList.remove("input-error"));
+      }
+
+      function setError(input, message) {
+        const id = input.id;
+        const err = document.querySelector('.field-error[data-for="' + id + '"]');
+        if (err) {
+          err.textContent = message;
+          err.hidden = false;
+        }
+        input.classList.add("input-error");
+      }
+
+      function validateName(val) {
+        return val.trim().length > 0 && !/\d/.test(val);
+      }
+
+      function validateMobile(val) {
+        return /^\d{10}$/.test(val.replace(/\D/g, ""));
+      }
+
+      function validateEmail(val) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+      }
+
+      function validateForm(form) {
+        clearErrors(form);
+        let ok = true;
+        const inputs = form.querySelectorAll("input[required], select[required]");
+        const personNameIds = ["pt-name", "dr-name", "ca-admin"];
+
+        inputs.forEach((input) => {
+          const label = form.querySelector('label[for="' + input.id + '"]');
+          const labelText = label ? label.textContent.replace(/\s*\*?\s*$/, "").trim() : "This field";
+
+          if (input.type === "tel" || input.name === "mobile") {
+            const digits = input.value.replace(/\D/g, "");
+            if (!digits) {
+              setError(input, labelText + " is required.");
+              ok = false;
+              return;
+            }
+            if (!validateMobile(input.value)) {
+              setError(input, "Mobile number must be exactly 10 digits.");
+              ok = false;
+            }
+            return;
+          }
+
+          if (input.type === "email") {
+            if (!input.value.trim()) {
+              setError(input, labelText + " is required.");
+              ok = false;
+              return;
+            }
+            if (!validateEmail(input.value)) {
+              setError(input, "Enter a valid email address.");
+              ok = false;
+            }
+            return;
+          }
+
+          if (input.type === "date") {
+            if (!input.value) {
+              setError(input, labelText + " is required.");
+              ok = false;
+            }
+            return;
+          }
+
+          if (input.tagName === "SELECT") {
+            if (!input.value) {
+              setError(input, labelText + " is required.");
+              ok = false;
+            }
+            return;
+          }
+
+          if (!input.value.trim()) {
+            setError(input, labelText + " is required.");
+            ok = false;
+            return;
+          }
+
+          if (personNameIds.includes(input.id) && !validateName(input.value)) {
+            setError(input, "Name must not contain numbers.");
+            ok = false;
+          }
+        });
+
+        return ok;
+      }
+
+      panels.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!validateForm(form)) return;
+
+          successBox.textContent =
+            "Account created successfully! Redirecting to sign in...";
+          successBox.hidden = false;
+          form.querySelectorAll("input, select, button").forEach((el) => (el.disabled = true));
+
+          setTimeout(() => {
+            window.location.href = "signin.html";
+          }, 2000);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
